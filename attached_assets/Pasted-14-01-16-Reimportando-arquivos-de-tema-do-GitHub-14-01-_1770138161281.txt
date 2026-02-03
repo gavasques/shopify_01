@@ -1,0 +1,55 @@
+14:01:16:
+
+Reimportando arquivos de tema do GitHub
+
+14:01:16:
+
+Arquivos buscados
+
+14:01:35:
+
+Erro: sections/footer-group.json, Validation failed: O tipo de seção "footer" não faz referência a um arquivo de seção existente.
+
+14:01:36:
+
+Erro: templates/password.json, Validation failed: O tipo de seção "password" não faz referência a um arquivo de seção existente.
+
+14:01:36:
+
+Erro: templates/product.json, Validation failed: O tipo de seção "product-information" não faz referência a um arquivo de seção existente., O tipo de seção "product-recommendations" não faz referência a um arquivo de seção existente.
+
+14:01:36:
+
+Erro: templates/product.landing.json, Validation failed: O tipo de seção "product-information" não faz referência a um arquivo de seção existente., O tipo de seção "rich-text" não faz referência a um arquivo de seção existente., O tipo de seção "product-recommendations" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/404.json, Validation failed: O tipo de seção "main-404" não faz referência a um arquivo de seção existente., O tipo de seção "product-list" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/cart.json, Validation failed: O tipo de seção "product-list" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/collection.json, Validation failed: O tipo de seção "section" não faz referência a um arquivo de seção existente., O tipo de seção "main-collection" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/index.json, Validation failed: O tipo de seção "hero" não faz referência a um arquivo de seção existente., O tipo de seção "rich-text" não faz referência a um arquivo de seção existente., O tipo de seção "product-list" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/page.contact.json, Validation failed: O tipo de seção "main-page" não faz referência a um arquivo de seção existente., O tipo de seção "section" não faz referência a um arquivo de seção existente.
+
+14:01:41:
+
+Erro: templates/page.json, Validation failed: O tipo de seção "main-page" não faz referência a um arquivo de seção existente.
+
+14:01:42:
+
+351 com sucesso, 0 aviso, 10 com falha
+
+14:01:42:
+
+Tema atualizado!

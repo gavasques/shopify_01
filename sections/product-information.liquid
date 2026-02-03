@@ -1,0 +1,197 @@
+<section class="product-information color-{{ section.settings.color_scheme }}">
+  <div class="product-information__wrapper page-width">
+    <div class="product-information__grid">
+      <div class="product-information__media">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.featured_image.alt | escape }}" class="product-information__image" width="800" loading="lazy">
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'product-information__image placeholder' }}
+        {% endif %}
+        
+        {% if product.images.size > 1 %}
+          <div class="product-information__thumbnails" role="list" aria-label="{{ 'products.product.media.gallery' | t }}">
+            {% for image in product.images %}
+              <button class="product-information__thumbnail" data-image-id="{{ image.id }}" aria-label="{{ 'products.product.media.select_image' | t }} {{ forloop.index }}">
+                <img src="{{ image | image_url: width: 100 }}" alt="{{ image.alt | escape }}" width="100" loading="lazy">
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="product-information__details">
+        <h1 class="product-information__title h2">{{ product.title }}</h1>
+        
+        <div class="product-information__price">
+          {% if product.compare_at_price > product.price %}
+            <span class="product-information__price--compare">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+          <span class="product-information__price--current">{{ product.price | money }}</span>
+        </div>
+
+        {% if product.description != blank %}
+          <div class="product-information__description rte">
+            {{ product.description }}
+          </div>
+        {% endif %}
+
+        {% form 'product', product %}
+          {% if product.has_only_default_variant == false %}
+            <div class="product-information__variants">
+              {% for option in product.options_with_values %}
+                {% assign option_id = 'option-' | append: forloop.index %}
+                <div class="product-information__option">
+                  <label for="{{ option_id }}">{{ option.name }}</label>
+                  <select id="{{ option_id }}" name="options[{{ option.name }}]">
+                    {% for value in option.values %}
+                      <option value="{{ value }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <div class="product-information__quantity">
+            <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+          </div>
+
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          
+          <button type="submit" class="button button--primary product-information__add-to-cart" {% unless product.available %}disabled{% endunless %}>
+            {% if product.available %}
+              {{ 'products.product.add_to_cart' | t }}
+            {% else %}
+              {{ 'products.product.sold_out' | t }}
+            {% endif %}
+          </button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-information {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+  .product-information__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .product-information__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .product-information__image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .product-information__thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .product-information__thumbnail {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: none;
+  }
+  .product-information__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .product-information__title {
+    margin-bottom: 1rem;
+  }
+  .product-information__price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  .product-information__price--compare {
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 0.5rem;
+  }
+  .product-information__description {
+    margin-bottom: 2rem;
+  }
+  .product-information__variants,
+  .product-information__quantity {
+    margin-bottom: 1.5rem;
+  }
+  .product-information__option label,
+  .product-information__quantity label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .product-information__option select,
+  .product-information__quantity input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .product-information__add-to-cart {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product information",
+  "class": "section-product-information",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "label": "Padding top",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "label": "Padding bottom",
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }
+      ],
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product information"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,179 @@
+<section class="main-collection color-{{ section.settings.color_scheme }}">
+  <div class="main-collection__wrapper page-width">
+    {% if section.settings.show_collection_header %}
+      <div class="main-collection__header">
+        <h1 class="main-collection__title h2">{{ collection.title }}</h1>
+        {% if collection.description != blank %}
+          <div class="main-collection__description rte">{{ collection.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% paginate collection.products by section.settings.products_per_page %}
+      {% if collection.products.size > 0 %}
+        <div class="main-collection__grid grid grid--{{ section.settings.columns }}-col">
+          {% for product in collection.products %}
+            <div class="product-card">
+              <a href="{{ product.url }}" class="product-card__link">
+                <div class="product-card__image-wrapper">
+                  {% if product.featured_image %}
+                    <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.featured_image.alt | escape }}" class="product-card__image" width="400" loading="lazy">
+                  {% else %}
+                    {{ 'product-1' | placeholder_svg_tag: 'product-card__image placeholder' }}
+                  {% endif %}
+                  {% if product.compare_at_price > product.price %}
+                    <span class="product-card__badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+                  {% endif %}
+                </div>
+                <div class="product-card__info">
+                  <h3 class="product-card__title h5">{{ product.title }}</h3>
+                  <div class="product-card__price">
+                    {% if product.compare_at_price > product.price %}
+                      <span class="product-card__price--compare">{{ product.compare_at_price | money }}</span>
+                    {% endif %}
+                    <span class="product-card__price--current">{{ product.price | money }}</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <nav class="main-collection__pagination" aria-label="{{ 'general.pagination.label' | t }}">
+            {{ paginate | default_pagination }}
+          </nav>
+        {% endif %}
+      {% else %}
+        <p class="main-collection__empty">{{ 'general.collection.empty' | t }}</p>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+<style>
+  .main-collection {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+  .main-collection__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .main-collection__title {
+    margin-bottom: 1rem;
+  }
+  .main-collection__description {
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+  .main-collection__grid {
+    display: grid;
+    gap: 2rem;
+  }
+  .main-collection__grid.grid--2-col { grid-template-columns: repeat(2, 1fr); }
+  .main-collection__grid.grid--3-col { grid-template-columns: repeat(3, 1fr); }
+  .main-collection__grid.grid--4-col { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 768px) {
+    .main-collection__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .main-collection__grid { grid-template-columns: 1fr; }
+  }
+  .main-collection__pagination {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  .main-collection__empty {
+    text-align: center;
+    opacity: 0.6;
+  }
+  .product-card__badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+  .product-card__image-wrapper {
+    position: relative;
+  }
+  .product-card__price--compare {
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 0.5rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection products",
+  "class": "section-main-collection",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_header",
+      "label": "Show collection header",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 16,
+      "label": "Products per page"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "label": "Padding top",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "label": "Padding bottom",
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }
+      ],
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection products"
+    }
+  ]
+}
+{% endschema %}

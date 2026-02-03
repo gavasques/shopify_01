@@ -1,0 +1,98 @@
+<footer class="footer color-{{ section.settings.color_scheme }}">
+  <div class="footer__content-top page-width">
+    {% if section.blocks.size > 0 %}
+      <div class="footer__blocks-wrapper grid grid--1-col grid--2-col-tablet grid--4-col-desktop">
+        {% for block in section.blocks %}
+          <div class="footer__block" {{ block.shopify_attributes }}>
+            {% case block.type %}
+              {% when 'link_list' %}
+                {% if block.settings.heading != blank %}
+                  <h3 class="footer__heading h4">{{ block.settings.heading }}</h3>
+                {% endif %}
+                {% if block.settings.menu != blank %}
+                  <ul class="footer__list list-unstyled">
+                    {% for link in block.settings.menu.links %}
+                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {% when 'brand_information' %}
+                <div class="footer__brand">
+                  {% if block.settings.show_logo %}
+                    {% if settings.logo != blank %}
+                      <img src="{{ settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" class="footer__logo" width="200" loading="lazy">
+                    {% else %}
+                      <span class="h4">{{ shop.name }}</span>
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                    <div class="footer__description rte">{{ block.settings.description }}</div>
+                  {% endif %}
+                </div>
+              {% when 'text' %}
+                {% if block.settings.heading != blank %}
+                  <h3 class="footer__heading h4">{{ block.settings.heading }}</h3>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <div class="footer__text rte">{{ block.settings.text }}</div>
+                {% endif %}
+            {% endcase %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="footer__content-bottom">
+    <div class="footer__copyright page-width">
+      <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'general.footer.copyright' | t }}</small>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }
+      ],
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "Brand information",
+      "settings": [
+        { "type": "checkbox", "id": "show_logo", "label": "Show logo", "default": true },
+        { "type": "richtext", "id": "description", "label": "Description" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

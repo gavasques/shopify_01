@@ -1,0 +1,61 @@
+<section class="main-404 color-{{ section.settings.color_scheme }}">
+  <div class="main-404__wrapper page-width">
+    <div class="main-404__content">
+      <h1 class="main-404__heading h0">404</h1>
+      <h2 class="main-404__subheading h3">{{ 'general.404.title' | t }}</h2>
+      <p class="main-404__text">{{ 'general.404.subtext' | t }}</p>
+      <a href="{{ routes.root_url }}" class="button button--primary">{{ 'general.404.link' | t }}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .main-404 {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+  .main-404__content {
+    text-align: center;
+  }
+  .main-404__heading {
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.1;
+  }
+  .main-404__subheading {
+    margin-bottom: 1rem;
+  }
+  .main-404__text {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "404 page",
+  "class": "section-main-404",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }
+      ],
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "404 page"
+    }
+  ]
+}
+{% endschema %}
