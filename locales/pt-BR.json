@@ -1,0 +1,92 @@
+{
+  "accessibility": {
+    "account": "Conta",
+    "cart": "Carrinho",
+    "cart_count": "Total de itens no carrinho",
+    "close_dialog": "Fechar",
+    "country_region": "País/Região",
+    "decrease_quantity": "Diminuir quantidade",
+    "discount": "Aplicar código de desconto",
+    "increase_quantity": "Aumentar quantidade",
+    "menu": "Menu",
+    "quantity": "Quantidade",
+    "remove": "Remover",
+    "search": "Buscar"
+  },
+  "cart": {
+    "title": "Carrinho",
+    "empty": "Seu carrinho está vazio",
+    "continue_shopping": "Continuar comprando",
+    "checkout": "Finalizar compra",
+    "subtotal": "Subtotal",
+    "taxes_and_shipping_at_checkout": "Impostos e frete calculados no checkout",
+    "update": "Atualizar",
+    "add_note": "Adicionar observação",
+    "note": "Observação do pedido"
+  },
+  "products": {
+    "add_to_cart": "Adicionar ao carrinho",
+    "buy_now": "Comprar agora",
+    "sold_out": "Esgotado",
+    "unavailable": "Indisponível",
+    "quantity": "Quantidade",
+    "price": "Preço",
+    "sale": "Promoção",
+    "on_sale": "Em promoção",
+    "from": "A partir de",
+    "description": "Descrição",
+    "specifications": "Especificações",
+    "reviews": "Avaliações",
+    "you_may_also_like": "Você também pode gostar",
+    "related_products": "Produtos relacionados"
+  },
+  "collections": {
+    "title": "Coleções",
+    "all_products": "Todos os produtos",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "clear_all": "Limpar tudo",
+    "no_products": "Nenhum produto encontrado"
+  },
+  "customer": {
+    "login": "Entrar",
+    "logout": "Sair",
+    "register": "Cadastrar",
+    "account": "Minha conta",
+    "orders": "Meus pedidos",
+    "addresses": "Endereços"
+  },
+  "footer": {
+    "newsletter": "Receba novidades",
+    "newsletter_description": "Cadastre-se e receba ofertas exclusivas",
+    "subscribe": "Inscrever",
+    "email_placeholder": "Seu e-mail",
+    "follow_us": "Siga-nos"
+  },
+  "general": {
+    "search": "Buscar",
+    "search_placeholder": "O que você procura?",
+    "close": "Fechar",
+    "continue": "Continuar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "view_all": "Ver tudo",
+    "read_more": "Leia mais",
+    "share": "Compartilhar"
+  },
+  "bkza": {
+    "hero_title": "Macas Portáteis de Alta Qualidade",
+    "hero_subtitle": "Conforto, praticidade e durabilidade para profissionais de saúde e estética",
+    "shop_now": "Comprar agora",
+    "free_shipping": "Frete grátis",
+    "warranty": "Garantia",
+    "secure_payment": "Pagamento seguro",
+    "fast_delivery": "Entrega rápida",
+    "why_choose_us": "Por que escolher a BKZA?",
+    "quality_materials": "Materiais de qualidade",
+    "lightweight": "Leve e portátil",
+    "easy_setup": "Montagem fácil",
+    "professional_grade": "Padrão profissional"
+  }
+}

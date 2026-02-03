@@ -1,32 +1,24 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
-        "text_YLPk4p": {
+        "text_subtitle": {
           "type": "text",
-          "name": "t:names.heading",
+          "name": "t:names.subtitle",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
+            "text": "<p>BKZA - Equipamentos Profissionais</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
+            "type_preset": "h6",
             "font": "var(--font-body--family)",
-            "font_size": "1rem",
+            "font_size": "0.875rem",
             "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
+            "letter_spacing": "0.1em",
+            "case": "uppercase",
             "wrap": "pretty",
-            "color": "var(--color-foreground-heading)",
+            "color": "#C5A94D",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -37,12 +29,79 @@
           },
           "blocks": {}
         },
+        "text_YLPk4p": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h1>Macas Portáteis de Alta Qualidade</h1>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-heading--family)",
+            "font_size": "3.5rem",
+            "line_height": "tight",
+            "letter_spacing": "-0.02em",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_description": {
+          "type": "text",
+          "name": "t:names.description",
+          "settings": {
+            "text": "<p>Conforto, praticidade e durabilidade para profissionais de saúde e estética. Fabricadas com materiais premium e garantia de qualidade.</p>",
+            "width": "fit-content",
+            "max_width": "500px",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1.125rem",
+            "line_height": "loose",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "button_H9gpTf": {
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop all",
+            "label": "Ver Produtos",
             "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "button_secondary": {
+          "type": "button",
+          "name": "t:names.button_secondary",
+          "settings": {
+            "label": "Fale Conosco",
+            "link": "/pages/contato",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "width": "fit-content",
@@ -54,8 +113,11 @@
         }
       },
       "block_order": [
+        "text_subtitle",
         "text_YLPk4p",
-        "button_H9gpTf"
+        "text_description",
+        "button_H9gpTf",
+        "button_secondary"
       ],
       "name": "t:names.hero",
       "settings": {
@@ -68,24 +130,65 @@
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-6",
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 8,
+        "section_width": "full-width",
+        "section_height": "large",
+        "section_height_custom": 80,
+        "color_scheme": "scheme-2",
         "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
+        "overlay_color": "#0A0A0A99",
+        "overlay_style": "gradient",
+        "gradient_direction": "to right",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-start": 120,
+        "padding-block-end": 120
+      }
+    },
+    "trust_badges": {
+      "type": "rich-text",
+      "blocks": {
+        "text_trust": {
+          "type": "text",
+          "settings": {
+            "text": "<div style='display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; padding: 2rem 0;'><div style='text-align: center;'><span style='font-size: 2rem;'>🚚</span><p style='font-weight: 600; margin-top: 0.5rem;'>Frete Grátis</p><p style='font-size: 0.875rem; opacity: 0.8;'>Para todo Brasil</p></div><div style='text-align: center;'><span style='font-size: 2rem;'>✅</span><p style='font-weight: 600; margin-top: 0.5rem;'>Garantia</p><p style='font-size: 0.875rem; opacity: 0.8;'>1 ano de garantia</p></div><div style='text-align: center;'><span style='font-size: 2rem;'>🔒</span><p style='font-weight: 600; margin-top: 0.5rem;'>Pagamento Seguro</p><p style='font-size: 0.875rem; opacity: 0.8;'>Dados protegidos</p></div><div style='text-align: center;'><span style='font-size: 2rem;'>💳</span><p style='font-weight: 600; margin-top: 0.5rem;'>Parcele em 12x</p><p style='font-size: 0.875rem; opacity: 0.8;'>Sem juros</p></div></div>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_trust"
+      ],
+      "name": "Trust Badges",
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-3",
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     },
     "product_list_fa6P9H": {
@@ -96,12 +199,12 @@
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
             "width": "fill",
@@ -120,27 +223,27 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_YFtzcL": {
+            "product_list_text_subtitle": {
               "type": "_product-list-text",
-              "name": "t:names.collection_title",
+              "name": "t:names.subtitle",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<p>NOSSOS PRODUTOS</p>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
+                "alignment": "center",
+                "type_preset": "h6",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "0.75rem",
                 "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
+                "letter_spacing": "0.15em",
+                "case": "uppercase",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "#C5A94D",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -151,24 +254,63 @@
               },
               "blocks": {}
             },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
               "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
+                "text": "<h2>Macas Portáteis Profissionais</h2>",
                 "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h2",
+                "font": "var(--font-heading--family)",
+                "font_size": "2.5rem",
+                "line_height": "tight",
+                "letter_spacing": "-0.02em",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_text_desc": {
+              "type": "_product-list-text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Equipamentos desenvolvidos para atender as necessidades dos profissionais mais exigentes</p>",
+                "width": "fit-content",
+                "max_width": "600px",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "loose",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
+            "product_list_text_subtitle",
             "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
+            "product_list_text_desc"
           ]
         },
         "static-product-card": {
@@ -176,15 +318,15 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 12,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 8,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -193,11 +335,11 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "4 / 5",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 8,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -211,7 +353,7 @@
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -223,7 +365,7 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 12,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -235,18 +377,18 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
-                "show_installments": false,
+                "show_installments": true,
                 "show_tax_info": false,
-                "type_preset": "h6",
+                "type_preset": "h5",
                 "width": "100%",
-                "alignment": "left",
+                "alignment": "center",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "1.25rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
+                "color": "#C5A94D",
+                "padding-block-start": 4,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -265,26 +407,136 @@
       "settings": {
         "collection": "all",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
+        "mobile_card_size": "70cqw",
+        "columns_gap": 24,
+        "rows_gap": 32,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
+        "horizontal_alignment": "center",
+        "gap": 32,
         "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
+    },
+    "cta_section": {
+      "type": "rich-text",
+      "blocks": {
+        "text_cta_subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "<p>QUALIDADE GARANTIDA</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "0.75rem",
+            "line_height": "normal",
+            "letter_spacing": "0.15em",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "color": "#C5A94D",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_cta_title": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Pronto para equipar seu espaço?</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-heading--family)",
+            "font_size": "2.5rem",
+            "line_height": "tight",
+            "letter_spacing": "-0.02em",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "#FFFFFF",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_cta_desc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entre em contato conosco e descubra a melhor solução para suas necessidades profissionais.</p>",
+            "width": "100%",
+            "max_width": "600px",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1.125rem",
+            "line_height": "loose",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "#E0E0E0",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_cta": {
+          "type": "button",
+          "settings": {
+            "label": "Fale com um Especialista",
+            "link": "/pages/contato",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_cta_subtitle",
+        "text_cta_title",
+        "text_cta_desc",
+        "button_cta"
+      ],
+      "name": "CTA Section",
+      "settings": {
+        "section_width": "full-width",
+        "gap": 8,
+        "color_scheme": "scheme-2",
+        "padding-block-start": 80,
+        "padding-block-end": 80
       }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "trust_badges",
+    "product_list_fa6P9H",
+    "cta_section"
   ]
 }
